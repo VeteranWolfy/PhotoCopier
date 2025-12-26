@@ -1,6 +1,7 @@
 import os
 import shutil
 from tkinter import *
+from tkinter.filedialog import askdirectory
 from PIL import Image, ImageTk
 
 
@@ -15,7 +16,8 @@ Press `y` when on Photo Sorter window and it will move the .jpg and .nef (if it 
 Press `n` and the photo will be skipped. 
 """
 
-SOURCE_FOLDER = r"E:\DCIM\114D5600"
+#SOURCE_FOLDER = r"E:\DCIM\114D5600"
+SOURCE_FOLDER=askdirectory(title="Select original photos folder")
 DEST_FOLDER = os.path.join(SOURCE_FOLDER, "best_photos")
 
 os.makedirs(DEST_FOLDER, exist_ok=True)
